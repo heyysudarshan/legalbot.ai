@@ -13,6 +13,7 @@ composeApp-androidLibrary-compileSdk = "36"
 composeApp-androidLibrary-minSdk = "24"
 
 [libraries]
+compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
