@@ -24,6 +24,15 @@ kotlin {
     }
 }
 
+compose.resources {
+    publicResClass = true
+
+    customDirectory(
+        sourceSetName = "commonMain",
+        directoryProvider = provider { layout.projectDirectory.dir("resources") }
+    )
+}
+
 android {
     namespace = libs.versions.shared.androidLibrary.namespace.get()
     compileSdk = libs.versions.shared.androidLibrary.compileSdk.get().toInt()
