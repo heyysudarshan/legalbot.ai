@@ -4,6 +4,9 @@ plugins {
     alias(libs.plugins.compose.compiler)
 }
 
+group = libs.versions.androidApp.group.get()
+version = libs.versions.androidApp.version.get()
+
 android {
     namespace = libs.versions.androidApp.androidApp.namespace.get()
     compileSdk = libs.versions.androidApp.androidApp.compileSdk.get().toInt()
