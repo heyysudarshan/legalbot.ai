@@ -1,6 +1,7 @@
 [versions]
 kotlin = "2.2.10"
 androidGradlePlugin = "8.12.1"
+composeMultiplatform = "1.8.2"
 
 # compose-app module's configuration information
 composeApp-group = "legalbot.compose.app"
@@ -11,3 +12,4 @@ composeApp-version = "1.0.0"
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
