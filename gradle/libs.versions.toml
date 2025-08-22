@@ -7,6 +7,11 @@ composeMultiplatform = "1.8.2"
 composeApp-group = "legalbot.compose.app"
 composeApp-version = "1.0.0"
 
+# compose-app module's android library configuration information
+composeApp-androidLibrary-namespace = "legalbot.compose.app"
+composeApp-androidLibrary-compileSdk = "36"
+composeApp-androidLibrary-minSdk = "24"
+
 [libraries]
 
 [plugins]
