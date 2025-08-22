@@ -9,9 +9,9 @@ androidApp-group = "lagalbot.android.app"
 androidApp-version = "1.0.0"
 
 # android-app module's android app package information
-androidApp-androidApp-namespace = "legalbot.compose.app"
+androidApp-androidApp-namespace = "lagalbot.android.app"
 androidApp-androidApp-compileSdk = "36"
-androidApp-androidApp-applicationId = "legalbot.compose.app"
+androidApp-androidApp-applicationId = "lagalbot.android.app"
 androidApp-androidApp-minSdk = "24"
 androidApp-androidApp-targetSdk = "36"
 androidApp-androidApp-versionCode = "1"
