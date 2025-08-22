@@ -1,4 +1,4 @@
-rootProject.name = "LawmateAI"
+rootProject.name = "Legalbot"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 @Suppress("UnstableApiUsage")
