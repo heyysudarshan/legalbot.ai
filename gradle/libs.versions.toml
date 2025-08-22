@@ -7,10 +7,19 @@ composeMultiplatform = "1.8.2"
 composeApp-group = "legalbot.compose.app"
 composeApp-version = "1.0.0"
 
-# compose-app module's android library configuration information
+# compose-app module's android library package information
 composeApp-androidLibrary-namespace = "legalbot.compose.app"
 composeApp-androidLibrary-compileSdk = "36"
 composeApp-androidLibrary-minSdk = "24"
+
+# shared module's configuration information
+shared-group = "compose.app.shared"
+shared-version = "1.0.0"
+
+# shared module's android library package information
+shared-androidLibrary-namespace = "compose.app.shared"
+shared-androidLibrary-compileSdk = "36"
+shared-androidLibrary-minSdk = "24"
 
 [libraries]
 compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
