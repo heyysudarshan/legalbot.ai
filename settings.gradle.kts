@@ -34,5 +34,6 @@ dependencyResolutionManagement {
     }
 }
 
+include(":desktop-app")
 include(":compose-app")
 include(":shared")
