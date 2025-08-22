@@ -15,6 +15,14 @@ android {
         versionCode = libs.versions.androidApp.androidApp.versionCode.get().toInt()
         versionName = libs.versions.androidApp.androidApp.versionName.get()
     }
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+        }
+    }
+    buildFeatures {
+        compose = true
+    }
 }
 
 // Custom build directory
