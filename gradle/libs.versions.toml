@@ -7,6 +7,7 @@ composeMultiplatform = "1.8.2"
 julie = "1.0.0-alpha"
 composeMultiplatformNavigation = "2.9.0-beta05"
 viewmodel = "2.9.2"
+kotlinSerializationJson = "1.9.0"
 
 # android-app module's configuration information
 androidApp-group = "legalbot.android.app"
@@ -63,6 +64,7 @@ compose-multiplatform-foundation = { module = "org.jetbrains.compose.foundation:
 compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-multiplatform-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMultiplatform" }
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel" }
+kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerializationJson" }
 
 [plugins]
 kotlin-compiler = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
