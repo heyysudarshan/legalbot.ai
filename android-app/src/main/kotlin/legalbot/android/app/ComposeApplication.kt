@@ -1,18 +1,14 @@
 package legalbot.android.app
 
 import android.app.Application
-import legalbot.user.onboarding.di.userOnboardingModule
+import legalbot.compose.app.di.initKoin
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
 
 class ComposeApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        startKoin {
+        initKoin {
             androidContext(this@ComposeApplication)
-            modules(
-                userOnboardingModule
-            )
         }
     }
 }
