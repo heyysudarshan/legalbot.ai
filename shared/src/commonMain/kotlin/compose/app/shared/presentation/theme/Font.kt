@@ -6,13 +6,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import compose.app.shared.resources.Res
+import compose.app.shared.resources.bold
+import compose.app.shared.resources.medium
 import compose.app.shared.resources.regular
+import compose.app.shared.resources.semibold
 import org.jetbrains.compose.resources.Font
 
 @Composable
 fun getTypography(): Typography {
     val poppins = FontFamily(
-        Font(resource = Res.font.regular, weight = FontWeight.Normal)
+        Font(resource = Res.font.regular, weight = FontWeight.Normal),
+        Font(resource = Res.font.medium, weight = FontWeight.Medium),
+        Font(resource = Res.font.semibold, weight = FontWeight.SemiBold),
+        Font(resource = Res.font.bold, weight = FontWeight.Bold)
     )
 
     return with(MaterialTheme.typography) {
