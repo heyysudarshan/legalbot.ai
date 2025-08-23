@@ -21,7 +21,7 @@ internal class LanguageLocalDataSourceImpl : LanguageLocalDataSource {
     override fun updateSelectedLanguage(language: Language) {
         languageList.update { value ->
             value.map {
-                if (it == language) {
+                if (it.locale == language.locale) {
                     language.copy(isSelected = true)
                 } else {
                     it.copy(isSelected = false)
