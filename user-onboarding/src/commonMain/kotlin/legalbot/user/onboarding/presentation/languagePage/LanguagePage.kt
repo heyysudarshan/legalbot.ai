@@ -1,22 +1,26 @@
 package legalbot.user.onboarding.presentation.languagePage
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import compose.app.shared.presentation.theme.ComposeAppTheme
 import compose.app.shared.resources.Res
 import compose.app.shared.resources.language_page_heading
 import compose.app.shared.resources.language_page_message
+import compose.app.shared.resources.next_button_label
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -24,6 +28,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 internal fun LanguagePage(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         HeadingAndMessage(modifier = Modifier.headingAndMessageModifier())
+        NextButtonAndContainer(modifier = Modifier.nextButtonAndContainerModifier())
     }
 }
 
@@ -35,18 +40,40 @@ private fun HeadingAndMessage(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Text(
             text = heading,
-            textAlign = TextAlign.Left,
-            fontWeight = FontWeight.Bold,
+            fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onSurface,
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineLarge,
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = message,
             fontWeight = FontWeight.Medium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
-            style = MaterialTheme.typography.bodyMedium
+            style = MaterialTheme.typography.bodyLarge
         )
+    }
+}
+
+@Composable
+private fun NextButtonAndContainer(modifier: Modifier = Modifier) {
+    val buttonLabel = stringResource(resource = Res.string.next_button_label)
+
+    Box(modifier = modifier) {
+        Button(
+            shape = RoundedCornerShape(100.dp),
+            contentPadding = PaddingValues(all = 0.dp),
+            modifier = Modifier.align(alignment = Alignment.CenterEnd),
+            onClick = {
+                TODO()
+            },
+        ) {
+            Text(
+                text = buttonLabel,
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(horizontal = 34.dp, vertical = 20.dp)
+            )
+        }
     }
 }
 
@@ -55,6 +82,13 @@ private fun Modifier.headingAndMessageModifier(): Modifier {
         .fillMaxWidth()
         .padding(start = 20.dp, end = 20.dp, top = 60.dp, bottom = 20.dp)
 }
+
+private fun Modifier.nextButtonAndContainerModifier(): Modifier {
+    return this
+        .fillMaxWidth()
+        .padding(all = 20.dp)
+}
+
 @Preview
 @Composable
 private fun LanguagePagePreview() {
