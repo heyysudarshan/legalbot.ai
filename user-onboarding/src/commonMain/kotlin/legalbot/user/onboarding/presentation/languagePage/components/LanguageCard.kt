@@ -62,7 +62,10 @@ internal fun LanguageCard(
 private fun LanguageCardPreview() {
     ComposeAppTheme {
         val language = Language(
-            name = "English", message = "Use this app in English", locale = "en", isSelected = true
+            name = "English",
+            message = "Use this app in English",
+            locale = "en",
+            isSelected = true
         )
         LanguageCard(language = language, modifier = Modifier.fillMaxWidth(), onClick = {})
     }
