@@ -28,11 +28,6 @@ kotlin {
 compose.resources {
     publicResClass = true
     packageOfResClass = libs.versions.shared.packageOfResClass.get()
-
-    customDirectory(
-        sourceSetName = "commonMain",
-        directoryProvider = provider { layout.projectDirectory.dir("resources") }
-    )
 }
 
 android {
