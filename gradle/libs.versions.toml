@@ -35,6 +35,7 @@ composeApp-androidLibrary-minSdk = "24"
 # shared module's configuration information
 shared-group = "compose.app.shared"
 shared-version = "1.0.0"
+shared-packageOfResClass = "compose.app.shared.resources"
 
 # shared module's android library package information
 shared-androidLibrary-namespace = "compose.app.shared"
