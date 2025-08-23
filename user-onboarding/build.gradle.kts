@@ -28,6 +28,10 @@ kotlin {
     }
 }
 
+compose.resources {
+    generateResClass = never
+}
+
 android {
     namespace = libs.versions.userOnboarding.androidLibrary.namespace.get()
     compileSdk = libs.versions.userOnboarding.androidLibrary.compileSdk.get().toInt()
