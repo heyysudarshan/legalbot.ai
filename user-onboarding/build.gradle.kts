@@ -20,6 +20,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.compose.viewmodel)
             implementation(libs.kotlin.serialization.json)
             implementation(libs.compose.multiplatform.material3)
             implementation(libs.compose.multiplatform.ui)
