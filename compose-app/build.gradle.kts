@@ -26,9 +26,12 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.kotlin.serialization.json)
             implementation(libs.compose.multiplatform.material3)
             implementation(libs.compose.multiplatform.ui)
+            implementation(libs.compose.multiplatform.navigation)
             implementation(projects.shared)
+            implementation(projects.userOnboarding)
         }
     }
 }
