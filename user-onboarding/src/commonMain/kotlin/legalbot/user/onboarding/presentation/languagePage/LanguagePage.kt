@@ -1,12 +1,16 @@
 package legalbot.user.onboarding.presentation.languagePage
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -16,19 +20,33 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import compose.app.shared.presentation.theme.ComposeAppTheme
 import compose.app.shared.resources.Res
 import compose.app.shared.resources.language_page_heading
 import compose.app.shared.resources.language_page_message
 import compose.app.shared.resources.next_button_label
+import legalbot.user.onboarding.presentation.languagePage.components.LanguageCard
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 internal fun LanguagePage(modifier: Modifier = Modifier) {
+    val languagePageViewModel = koinViewModel<LanguagePageViewModel>()
     Column(modifier = modifier) {
         HeadingAndMessage(modifier = Modifier.headingAndMessageModifier())
-        NextButtonAndContainer(modifier = Modifier.nextButtonAndContainerModifier())
+        Box(modifier = Modifier.fillMaxWidth()) {
+            LanguageList(
+                languagePageViewModel = languagePageViewModel,
+                modifier = Modifier.fillMaxSize()
+            )
+            NextButtonAndContainer(
+                modifier = Modifier
+                    .nextButtonAndContainerModifier()
+                    .align(Alignment.BottomEnd)
+            )
+        }
     }
 }
 
@@ -49,8 +67,29 @@ private fun HeadingAndMessage(modifier: Modifier = Modifier) {
             text = message,
             fontWeight = FontWeight.Medium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
-            style = MaterialTheme.typography.bodyLarge
+            style = MaterialTheme.typography.bodyMedium
         )
+    }
+}
+
+@Composable
+private fun LanguageList(
+    languagePageViewModel: LanguagePageViewModel,
+    modifier: Modifier = Modifier
+) {
+    val uiState = languagePageViewModel.uiState.collectAsStateWithLifecycle()
+    val languages = uiState.value.languages
+
+    LazyColumn(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        items(items = languages) { language ->
+            LanguageCard(
+                language = language,
+                modifier = Modifier.fillMaxWidth(),
+                onClick = {
+                    languagePageViewModel.updateSelectedLanguage(language = language)
+                }
+            )
+        }
     }
 }
 
