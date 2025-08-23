@@ -20,7 +20,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.koin.core)
+            implementation(libs.bundles.koin.multiplatform)
             implementation(libs.compose.viewmodel)
             implementation(libs.kotlin.serialization.json)
             implementation(libs.compose.multiplatform.material3)
