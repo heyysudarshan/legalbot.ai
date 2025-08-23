@@ -28,6 +28,7 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.compose.multiplatform.material3)
             implementation(libs.compose.multiplatform.ui)
+            implementation(projects.shared)
         }
     }
 }
