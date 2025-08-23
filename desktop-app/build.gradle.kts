@@ -9,16 +9,13 @@ plugins {
 group = libs.versions.desktopApp.group.get()
 version = libs.versions.desktopApp.version.get()
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of("21"))
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
-kotlin.compilerOptions {
-    jvmTarget = JvmTarget.JVM_21
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_21)
+    }
 }
 
 dependencies {
