@@ -1,4 +1,4 @@
-package lagalbot.android.app
+package legalbot.android.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
