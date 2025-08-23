@@ -5,6 +5,7 @@ androidGradlePlugin = "8.12.1"
 activityCompose = "1.10.1"
 composeMultiplatform = "1.8.2"
 julie = "1.0.0-alpha"
+composeMultiplatformNavigation = "2.9.0-beta05"
 viewmodel = "2.9.2"
 
 # android-app module's configuration information
@@ -53,7 +54,6 @@ userOnboarding-androidLibrary-namespace = "legalbot.user.onboarding"
 userOnboarding-androidLibrary-compileSdk = "36"
 userOnboarding-androidLibrary-minSdk = "24"
 
-
 [libraries]
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 compose-multiplatform-preview = { module = "org.jetbrains.compose.components:components-ui-tooling-preview", version.ref = "composeMultiplatform" }
@@ -61,6 +61,7 @@ compose-multiplatform-resources = { module = "org.jetbrains.compose.components:c
 compose-multiplatform-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
 compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-multiplatform-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMultiplatform" }
+compose-multiplatform-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "composeMultiplatformNavigation" }
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel" }
 
 [plugins]
