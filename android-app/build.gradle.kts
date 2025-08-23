@@ -38,8 +38,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.koin.android)
+    implementation(libs.koin.core)
     implementation(libs.activity.compose)
     implementation(projects.composeApp)
+    implementation(projects.userOnboarding)
 }
 
 // Custom build directory
