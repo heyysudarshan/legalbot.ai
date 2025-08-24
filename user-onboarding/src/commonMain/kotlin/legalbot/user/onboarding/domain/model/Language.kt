@@ -5,4 +5,5 @@ internal data class Language(
     val message: String,
     val locale: String,
     val isSelected: Boolean,
+    val animationDuration: Long = 0L,
 )
