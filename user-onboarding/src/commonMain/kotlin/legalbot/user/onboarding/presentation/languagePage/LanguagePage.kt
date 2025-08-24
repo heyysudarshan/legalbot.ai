@@ -1,5 +1,6 @@
 package legalbot.user.onboarding.presentation.languagePage
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -79,16 +80,20 @@ private fun LanguageList(
 ) {
     val uiState = languagePageViewModel.uiState.collectAsStateWithLifecycle()
     val languages = uiState.value.languages
+    val animationJobProgress = uiState.value.animationJobProgress
 
     LazyColumn(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         items(items = languages) { language ->
-            LanguageCard(
-                language = language,
-                modifier = Modifier.fillMaxWidth(),
-                onClick = {
-                    languagePageViewModel.updateSelectedLanguage(language = language)
-                }
-            )
+            val showContent = animationJobProgress == language.animationDuration
+            AnimatedVisibility(visible = showContent) {
+                LanguageCard(
+                    language = language,
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = {
+                        languagePageViewModel.updateSelectedLanguage(language = language)
+                    }
+                )
+            }
         }
     }
 }
