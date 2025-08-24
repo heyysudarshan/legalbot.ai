@@ -14,7 +14,7 @@ internal class LanguageLocalDataSourceImpl : LanguageLocalDataSource {
         )
     )
 
-    override fun getLanguages(): StateFlow<List<Language>> {
+    override suspend fun getLanguages(): StateFlow<List<Language>> {
         return languageList
     }
 
