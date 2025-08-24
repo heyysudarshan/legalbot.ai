@@ -2,6 +2,8 @@ package legalbot.user.onboarding.presentation.languagePage
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -14,28 +16,35 @@ internal class LanguagePageViewModel(
     var uiState = MutableStateFlow(LanguagePageUiState())
         private set
 
+    private var animationJob: Job? = null
+
     init {
         viewModelScope.launch {
             languageUseCase.getLanguages().collect { languages ->
-                uiState.value = LanguagePageUiState(languages = languages)
+                uiState.collect { value ->
+                    value.copy(languages = languages)
+                }
             }
         }
-        addAnimationDuration()
     }
 
     fun updateSelectedLanguage(language: Language) {
         languageUseCase.updateSelectedLanguage(language = language)
     }
 
-    private fun addAnimationDuration() {
-        var lastKnownDelay = 0L
-        uiState.update { value ->
-            value.copy(
-                languages = value.languages.map {
-                    lastKnownDelay += 100
-                    it.copy(animationDuration = lastKnownDelay)
+    fun startAnimationJob() {
+        animationJob = viewModelScope.launch {
+            val totalLanguagesCount = uiState.value.languages.size
+            var animationJobProgress = 0L
+
+            repeat(times = totalLanguagesCount) {
+                uiState.update { value ->
+                    animationJobProgress += 100L
+                    value.copy(animationJobProgress = animationJobProgress)
                 }
-            )
+                delay(100L)
+            }
         }
+        animationJob?.cancel()
     }
 }
