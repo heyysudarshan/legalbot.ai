@@ -8,9 +8,24 @@ import legalbot.user.onboarding.domain.model.Language
 internal class LanguageLocalDataSourceImpl : LanguageLocalDataSource {
     private val languageList = MutableStateFlow(
         listOf(
-            Language(name = "English", message = "Use this app in English.", locale = "en", isSelected = true),
-            Language(name = "Marathi", message = "हे अ‍ॅप मराठीत वापरा.", locale = "mr", isSelected = false),
-            Language(name = "Hindi", message = "इस ऐप का उपयोग हिंदी में करें।", locale = "hi", isSelected = false),
+            Language(
+                name = "English",
+                message = "Use this app in English.",
+                locale = "en",
+                isSelected = true
+            ),
+            Language(
+                name = "Marathi",
+                message = "हे अ‍ॅप मराठीत वापरा.",
+                locale = "mr",
+                isSelected = false
+            ),
+            Language(
+                name = "Hindi",
+                message = "इस ऐप का उपयोग हिंदी में करें।",
+                locale = "hi",
+                isSelected = false
+            ),
         )
     )
 
