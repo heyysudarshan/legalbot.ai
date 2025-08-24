@@ -6,4 +6,5 @@ internal data class Language(
     val locale: String,
     val isSelected: Boolean,
     val animationDuration: Long = 0L,
+    val showUi: Boolean = false,
 )
