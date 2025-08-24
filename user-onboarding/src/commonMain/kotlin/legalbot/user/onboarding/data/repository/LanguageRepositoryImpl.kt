@@ -8,7 +8,7 @@ import legalbot.user.onboarding.domain.repository.LanguageRepository
 internal class LanguageRepositoryImpl(
     private val localDataSource: LanguageLocalDataSource
 ) : LanguageRepository {
-    override fun getLanguages(): StateFlow<List<Language>> {
+    override suspend fun getLanguages(): StateFlow<List<Language>> {
         return localDataSource.getLanguages()
     }
 
