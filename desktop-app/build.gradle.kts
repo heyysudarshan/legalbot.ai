@@ -19,6 +19,7 @@ kotlin {
 }
 
 dependencies {
+    implementation(libs.kotlin.coroutines.swing)
     implementation(compose.desktop.currentOs)
     implementation(projects.composeApp)
 }
