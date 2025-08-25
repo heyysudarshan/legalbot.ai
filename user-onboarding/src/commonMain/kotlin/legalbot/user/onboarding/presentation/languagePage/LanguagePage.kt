@@ -3,20 +3,12 @@ package legalbot.user.onboarding.presentation.languagePage
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import compose.app.shared.presentation.theme.ComposeAppTheme
@@ -24,11 +16,11 @@ import compose.app.shared.resources.Res
 import compose.app.shared.resources.language_page_heading
 import compose.app.shared.resources.language_page_message
 import compose.app.shared.resources.next_button_label
+import legalbot.user.onboarding.presentation.components.BottomButtonAndContainer
 import legalbot.user.onboarding.presentation.components.HeadingAndMessage
+import legalbot.user.onboarding.presentation.extensions.bottomButtonAndContainerModifier
 import legalbot.user.onboarding.presentation.extensions.headingAndMessageModifier
-import legalbot.user.onboarding.presentation.extensions.nextButtonAndContainerModifier
 import legalbot.user.onboarding.presentation.languagePage.components.LanguageCard
-import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -46,8 +38,10 @@ internal fun LanguagePage(modifier: Modifier = Modifier) {
                 languagePageViewModel = languagePageViewModel,
                 modifier = Modifier.fillMaxSize()
             )
-            NextButtonAndContainer(
-                modifier = Modifier.nextButtonAndContainerModifier().align(Alignment.BottomEnd)
+            BottomButtonAndContainer(
+                label = Res.string.next_button_label,
+                modifier = Modifier.bottomButtonAndContainerModifier(),
+                onClick = {}
             )
         }
     }
@@ -67,29 +61,6 @@ private fun LanguageList(
                 language = language,
                 modifier = Modifier.fillMaxWidth(),
                 onClick = { languagePageViewModel.updateSelectedLanguage(language) }
-            )
-        }
-    }
-}
-
-@Composable
-private fun NextButtonAndContainer(modifier: Modifier = Modifier) {
-    val buttonLabel = stringResource(resource = Res.string.next_button_label)
-
-    Box(modifier = modifier) {
-        Button(
-            shape = RoundedCornerShape(100.dp),
-            contentPadding = PaddingValues(all = 0.dp),
-            modifier = Modifier.align(alignment = Alignment.CenterEnd),
-            onClick = {
-                TODO()
-            },
-        ) {
-            Text(
-                text = buttonLabel,
-                style = MaterialTheme.typography.labelLarge,
-                fontWeight = FontWeight.Bold,
-                modifier = Modifier.padding(horizontal = 34.dp, vertical = 20.dp)
             )
         }
     }
