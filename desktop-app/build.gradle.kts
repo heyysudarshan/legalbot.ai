@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compiler)
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.compose.hot.reload)
 }
 
 group = libs.versions.desktopApp.group.get()
