@@ -11,7 +11,7 @@ internal fun Modifier.headingAndMessageModifier(): Modifier {
         .padding(start = 20.dp, end = 20.dp, top = 60.dp, bottom = 20.dp)
 }
 
-internal fun Modifier.nextButtonAndContainerModifier(): Modifier {
+internal fun Modifier.bottomButtonAndContainerModifier(): Modifier {
     return this
         .fillMaxWidth()
         .padding(all = 20.dp)
