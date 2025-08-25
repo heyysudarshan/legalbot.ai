@@ -47,9 +47,8 @@ private fun BottomButtonAndContainer(
 @Composable
 private fun NextButtonAndContainerPreview() {
     ComposeAppTheme {
-        val label = Res.string.next_button_label
         BottomButtonAndContainer(
-            label = label,
+            label = Res.string.next_button_label,
             modifier = Modifier.bottomButtonAndContainerModifier(),
             onClick = {}
         )
