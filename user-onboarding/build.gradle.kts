@@ -12,7 +12,7 @@ version = libs.versions.userOnboarding.version.get()
 kotlin {
     androidTarget()
 
-    jvm("desktop")
+    jvm()
 
     iosX64()
     iosArm64()
