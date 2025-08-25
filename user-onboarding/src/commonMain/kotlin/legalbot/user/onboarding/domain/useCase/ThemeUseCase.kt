@@ -7,7 +7,7 @@ import legalbot.user.onboarding.domain.repository.ThemeRepository
 internal class ThemeUseCase(
     private val repository: ThemeRepository
 ) {
-    fun getThemes(): StateFlow<List<Theme>> {
+    suspend fun getThemes(): StateFlow<List<Theme>> {
         return repository.getThemes()
     }
 

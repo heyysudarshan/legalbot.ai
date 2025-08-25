@@ -8,7 +8,7 @@ import legalbot.user.onboarding.domain.repository.ThemeRepository
 internal class ThemeRepositoryImpl(
     private val localDataSource: ThemeLocalDataSource
 ) : ThemeRepository {
-    override fun getThemes(): StateFlow<List<Theme>> {
+    override suspend fun getThemes(): StateFlow<List<Theme>> {
         return localDataSource.getThemes()
     }
 

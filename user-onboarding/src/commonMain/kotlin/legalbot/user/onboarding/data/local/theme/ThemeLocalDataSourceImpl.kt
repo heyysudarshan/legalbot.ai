@@ -30,7 +30,7 @@ internal class ThemeLocalDataSourceImpl : ThemeLocalDataSource {
         )
     )
 
-    override fun getThemes(): StateFlow<List<Theme>> {
+    override suspend fun getThemes(): StateFlow<List<Theme>> {
         return themeList
     }
 
