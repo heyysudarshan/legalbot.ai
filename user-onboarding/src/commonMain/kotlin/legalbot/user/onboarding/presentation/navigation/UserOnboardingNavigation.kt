@@ -18,7 +18,10 @@ fun UserOnboardingNavigation() {
         startDestination = UserOnboardingRoutes.LanguagePage
     ) {
         composable<UserOnboardingRoutes.LanguagePage> {
-            LanguagePage(modifier = Modifier.fillMaxSize())
+            LanguagePage(
+                userOnBoardingNavController = userOnboardingNavController,
+                modifier = Modifier.fillMaxSize()
+            )
         }
         composable<UserOnboardingRoutes.ThemPage> {
             ThemePage(modifier = Modifier.fillMaxSize())
