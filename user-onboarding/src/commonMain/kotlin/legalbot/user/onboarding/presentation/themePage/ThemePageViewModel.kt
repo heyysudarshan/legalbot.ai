@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import legalbot.user.onboarding.domain.model.Theme
 import legalbot.user.onboarding.domain.useCase.ThemeUseCase
 
 internal class ThemePageViewModel(private val themeUseCase: ThemeUseCase) : ViewModel() {
@@ -18,5 +19,9 @@ internal class ThemePageViewModel(private val themeUseCase: ThemeUseCase) : View
                 }
             }
         }
+    }
+
+    fun updateSelectedTheme(theme: Theme) {
+        themeUseCase.updateSelectedTheme(theme = theme)
     }
 }
