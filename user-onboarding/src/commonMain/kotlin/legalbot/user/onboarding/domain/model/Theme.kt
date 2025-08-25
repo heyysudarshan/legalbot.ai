@@ -1,0 +1,7 @@
+package legalbot.user.onboarding.domain.model
+
+internal data class Theme(
+    val name: String,
+    val message: String,
+    val isSelected: Boolean
+)
