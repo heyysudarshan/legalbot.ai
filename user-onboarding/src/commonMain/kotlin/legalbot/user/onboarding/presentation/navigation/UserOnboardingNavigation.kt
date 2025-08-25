@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import legalbot.user.onboarding.presentation.languagePage.LanguagePage
+import legalbot.user.onboarding.presentation.themePage.ThemePage
 
 @Composable
 fun UserOnboardingNavigation() {
@@ -18,6 +19,9 @@ fun UserOnboardingNavigation() {
     ) {
         composable<UserOnboardingRoutes.LanguagePage> {
             LanguagePage(modifier = Modifier.fillMaxSize())
+        }
+        composable<UserOnboardingRoutes.LanguagePage> {
+            ThemePage(modifier = Modifier.fillMaxSize())
         }
     }
 }
