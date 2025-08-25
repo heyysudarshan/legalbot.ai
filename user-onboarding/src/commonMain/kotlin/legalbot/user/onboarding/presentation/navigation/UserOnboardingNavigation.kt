@@ -20,7 +20,7 @@ fun UserOnboardingNavigation() {
         composable<UserOnboardingRoutes.LanguagePage> {
             LanguagePage(modifier = Modifier.fillMaxSize())
         }
-        composable<UserOnboardingRoutes.LanguagePage> {
+        composable<UserOnboardingRoutes.ThemPage> {
             ThemePage(modifier = Modifier.fillMaxSize())
         }
     }
