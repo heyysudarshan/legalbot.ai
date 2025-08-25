@@ -24,7 +24,10 @@ fun UserOnboardingNavigation() {
             )
         }
         composable<UserOnboardingRoutes.ThemPage> {
-            ThemePage(modifier = Modifier.fillMaxSize())
+            ThemePage(
+                userOnboardingNavController = userOnboardingNavController,
+                modifier = Modifier.fillMaxSize()
+            )
         }
     }
 }
