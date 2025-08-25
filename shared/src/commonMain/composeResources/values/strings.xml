@@ -3,4 +3,7 @@
     <string name="language_page_heading">Select Your Preferred App Language</string>
     <string name="language_page_message">Dear user, please select your preferred app language to use this app. You can change it later anytime from Settings.</string>
     <string name="next_button_label">Next</string>
+    <string name="theme_page_heading">Select Your App Theme</string>
+    <string name="theme_page_message">Choose your preferred theme to personalize the app’s appearance. You can switch between light, dark, or system default themes anytime from the settings.</string>
+    <string name="continue_button_label">Continue</string>
 </resources>
