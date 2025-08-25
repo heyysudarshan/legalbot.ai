@@ -21,7 +21,7 @@ import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
-private fun BottomButtonAndContainer(
+internal fun BottomButtonAndContainer(
     label: StringResource,
     onClick: () -> Unit = {},
     modifier: Modifier = Modifier
