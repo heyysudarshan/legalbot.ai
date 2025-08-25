@@ -1,6 +1,5 @@
 package legalbot.user.onboarding.presentation.languagePage
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -43,9 +42,7 @@ internal fun LanguagePage(modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxSize()
             )
             NextButtonAndContainer(
-                modifier = Modifier
-                    .nextButtonAndContainerModifier()
-                    .align(Alignment.BottomEnd)
+                modifier = Modifier.nextButtonAndContainerModifier().align(Alignment.BottomEnd)
             )
         }
     }
@@ -59,14 +56,14 @@ private fun HeadingAndMessage(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Text(
             text = heading,
-            fontWeight = FontWeight.SemiBold,
+            fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onSurface,
             style = MaterialTheme.typography.headlineLarge,
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
             text = message,
-            fontWeight = FontWeight.Medium,
+            fontWeight = FontWeight.Normal,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             style = MaterialTheme.typography.bodyMedium
         )
@@ -80,20 +77,14 @@ private fun LanguageList(
 ) {
     val uiState = languagePageViewModel.uiState.collectAsStateWithLifecycle()
     val languages = uiState.value.languages
-    val animationJobProgress = uiState.value.animationJobProgress
 
     LazyColumn(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
         items(items = languages) { language ->
-            val showContent = animationJobProgress == language.animationDuration
-            AnimatedVisibility(visible = showContent) {
-                LanguageCard(
-                    language = language,
-                    modifier = Modifier.fillMaxWidth(),
-                    onClick = {
-                        languagePageViewModel.updateSelectedLanguage(language = language)
-                    }
-                )
-            }
+            LanguageCard(
+                language = language,
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { languagePageViewModel.updateSelectedLanguage(language) }
+            )
         }
     }
 }
