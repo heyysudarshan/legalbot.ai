@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.update
 import legalbot.user.onboarding.domain.model.Theme
 import legalbot.user.onboarding.domain.model.ThemeType
 
-internal class LocalThemeDataSourceImpl : LocalThemeDataSource {
+internal class ThemeLocalDataSourceImpl : ThemeLocalDataSource {
     private val themeList = MutableStateFlow(
         listOf(
             Theme(
