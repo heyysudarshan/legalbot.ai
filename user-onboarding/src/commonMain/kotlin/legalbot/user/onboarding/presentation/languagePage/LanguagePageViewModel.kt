@@ -8,9 +8,7 @@ import kotlinx.coroutines.launch
 import legalbot.user.onboarding.domain.model.Language
 import legalbot.user.onboarding.domain.useCase.LanguageUseCase
 
-internal class LanguagePageViewModel(
-    private val languageUseCase: LanguageUseCase,
-) : ViewModel() {
+internal class LanguagePageViewModel(private val languageUseCase: LanguageUseCase) : ViewModel() {
     var uiState = MutableStateFlow(LanguagePageUiState())
         private set
 
