@@ -8,9 +8,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import compose.app.shared.presentation.theme.ComposeAppTheme
 import compose.app.shared.resources.Res
 import compose.app.shared.resources.language_page_heading
@@ -21,11 +24,15 @@ import legalbot.user.onboarding.presentation.components.HeadingAndMessage
 import legalbot.user.onboarding.presentation.extensions.bottomButtonAndContainerModifier
 import legalbot.user.onboarding.presentation.extensions.headingAndMessageModifier
 import legalbot.user.onboarding.presentation.languagePage.components.LanguageCard
+import legalbot.user.onboarding.presentation.navigation.UserOnboardingRoutes
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-internal fun LanguagePage(modifier: Modifier = Modifier) {
+internal fun LanguagePage(
+    userOnBoardingNavController: NavController,
+    modifier: Modifier = Modifier
+) {
     val languagePageViewModel = koinViewModel<LanguagePageViewModel>()
     Column(modifier = modifier) {
         HeadingAndMessage(
@@ -40,8 +47,11 @@ internal fun LanguagePage(modifier: Modifier = Modifier) {
             )
             BottomButtonAndContainer(
                 label = Res.string.next_button_label,
-                modifier = Modifier.bottomButtonAndContainerModifier(),
-                onClick = {}
+                modifier = Modifier.bottomButtonAndContainerModifier()
+                    .align(alignment = Alignment.BottomEnd),
+                onClick = {
+                    userOnBoardingNavController.navigate(UserOnboardingRoutes.ThemPage)
+                }
             )
         }
     }
@@ -70,6 +80,9 @@ private fun LanguageList(
 @Composable
 private fun LanguagePagePreview() {
     ComposeAppTheme {
-        LanguagePage()
+        LanguagePage(
+            userOnBoardingNavController = rememberNavController(),
+            modifier = Modifier.fillMaxSize(),
+        )
     }
 }
