@@ -12,7 +12,7 @@ version = libs.versions.userOnboarding.version.get()
 kotlin {
     androidTarget()
 
-    jvm()
+    jvm("desktop")
 
     iosX64()
     iosArm64()
@@ -22,13 +22,10 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.bundles.koin.multiplatform)
             implementation(libs.kotlin.serialization.json)
+            implementation(libs.lifecycle.runtime.compose)
             implementation(libs.compose.viewmodel)
             implementation(libs.bundles.compose.multiplatform)
             implementation(projects.shared)
-            implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.2")
-        }
-        jvmMain.dependencies {
-            implementation(libs.kotlin.coroutines.swing)
         }
     }
 }
