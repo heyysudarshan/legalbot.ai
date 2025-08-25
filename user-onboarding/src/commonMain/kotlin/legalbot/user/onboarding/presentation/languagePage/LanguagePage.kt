@@ -4,10 +4,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -26,6 +24,9 @@ import compose.app.shared.resources.Res
 import compose.app.shared.resources.language_page_heading
 import compose.app.shared.resources.language_page_message
 import compose.app.shared.resources.next_button_label
+import legalbot.user.onboarding.presentation.components.HeadingAndMessage
+import legalbot.user.onboarding.presentation.extensions.headingAndMessageModifier
+import legalbot.user.onboarding.presentation.extensions.nextButtonAndContainerModifier
 import legalbot.user.onboarding.presentation.languagePage.components.LanguageCard
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -35,7 +36,11 @@ import org.koin.compose.viewmodel.koinViewModel
 internal fun LanguagePage(modifier: Modifier = Modifier) {
     val languagePageViewModel = koinViewModel<LanguagePageViewModel>()
     Column(modifier = modifier) {
-        HeadingAndMessage(modifier = Modifier.headingAndMessageModifier())
+        HeadingAndMessage(
+            heading = Res.string.language_page_heading,
+            message = Res.string.language_page_message,
+            modifier = Modifier.headingAndMessageModifier()
+        )
         Box(modifier = Modifier.fillMaxWidth()) {
             LanguageList(
                 languagePageViewModel = languagePageViewModel,
@@ -45,28 +50,6 @@ internal fun LanguagePage(modifier: Modifier = Modifier) {
                 modifier = Modifier.nextButtonAndContainerModifier().align(Alignment.BottomEnd)
             )
         }
-    }
-}
-
-@Composable
-private fun HeadingAndMessage(modifier: Modifier = Modifier) {
-    val heading = stringResource(resource = Res.string.language_page_heading)
-    val message = stringResource(resource = Res.string.language_page_message)
-
-    Column(modifier = modifier) {
-        Text(
-            text = heading,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurface,
-            style = MaterialTheme.typography.headlineLarge,
-        )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = message,
-            fontWeight = FontWeight.Normal,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-            style = MaterialTheme.typography.bodyMedium
-        )
     }
 }
 
@@ -110,18 +93,6 @@ private fun NextButtonAndContainer(modifier: Modifier = Modifier) {
             )
         }
     }
-}
-
-private fun Modifier.headingAndMessageModifier(): Modifier {
-    return this
-        .fillMaxWidth()
-        .padding(start = 20.dp, end = 20.dp, top = 60.dp, bottom = 20.dp)
-}
-
-private fun Modifier.nextButtonAndContainerModifier(): Modifier {
-    return this
-        .fillMaxWidth()
-        .padding(all = 20.dp)
 }
 
 @Preview
