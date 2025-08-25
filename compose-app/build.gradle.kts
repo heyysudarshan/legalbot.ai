@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
@@ -12,7 +14,11 @@ version = libs.versions.composeApp.version.get()
 kotlin {
     androidTarget()
 
-    jvm("desktop")
+    jvm("desktop") {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_21
+        }
+    }
 
     listOf(
         iosX64(),
@@ -27,6 +33,7 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.koin.core)
             implementation(libs.kotlin.serialization.json)
             implementation(libs.compose.multiplatform.material3)
             implementation(libs.compose.multiplatform.ui)

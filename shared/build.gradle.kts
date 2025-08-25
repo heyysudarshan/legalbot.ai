@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
@@ -12,7 +14,11 @@ version = libs.versions.shared.version.get()
 kotlin {
     androidTarget()
 
-    jvm()
+    jvm("desktop") {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_21
+        }
+    }
 
     iosX64()
     iosArm64()
