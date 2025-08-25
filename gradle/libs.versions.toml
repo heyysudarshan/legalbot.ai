@@ -5,7 +5,7 @@ androidGradlePlugin = "8.12.1"
 activityCompose = "1.10.1"
 composeMultiplatform = "1.8.2"
 julie = "1.0.0-alpha"
-composeMultiplatformNavigation = "2.9.0-beta05"
+navigation = "2.9.0-beta05"
 viewmodel = "2.9.2"
 kotlinCoroutines = "1.10.2"
 kotlinSerialization = "1.9.0"
@@ -61,12 +61,12 @@ userOnboarding-androidLibrary-minSdk = "24"
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 compose-multiplatform-preview = { module = "org.jetbrains.compose.components:components-ui-tooling-preview", version.ref = "composeMultiplatform" }
 compose-multiplatform-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
-compose-multiplatform-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "composeMultiplatformNavigation" }
+compose-multiplatform-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
 compose-multiplatform-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
 compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-multiplatform-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMultiplatform" }
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel" }
-kotlin-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinCoroutines"}
+kotlin-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinCoroutines" }
 kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
@@ -74,7 +74,10 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koin" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
 
 [bundles]
-koin-multiplatform = ["koin-core", "koin-compose", "koin-compose-viewmodel"]
+compose-multiplatform = ["compose-multiplatform-preview", "compose-multiplatform-navigation",
+    "compose-multiplatform-foundation", "compose-multiplatform-ui", "compose-multiplatform-material3"
+]
+koin-multiplatform = ["koin-core", "koin-compose"]
 koin-android = ["koin-core", "koin-android"]
 
 [plugins]
