@@ -23,7 +23,6 @@ internal fun HeadingAndMessage(
     message: StringResource,
     modifier: Modifier = Modifier
 ) {
-
     Column(modifier = modifier) {
         Text(
             text = stringResource(resource = heading),
