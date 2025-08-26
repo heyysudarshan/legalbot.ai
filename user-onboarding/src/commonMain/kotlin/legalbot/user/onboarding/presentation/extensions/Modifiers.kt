@@ -1,8 +1,14 @@
 package legalbot.user.onboarding.presentation.extensions
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 internal fun Modifier.headingAndMessageModifier(): Modifier {
@@ -15,4 +21,15 @@ internal fun Modifier.bottomButtonAndContainerModifier(): Modifier {
     return this
         .fillMaxWidth()
         .padding(all = 20.dp)
+}
+
+private fun Modifier.desktopLayoutModifier(
+    backgroundColor: Color,
+    horizontalPadding: Dp,
+    verticalPadding: Dp
+): Modifier {
+    return background(color = backgroundColor)
+        .fillMaxSize()
+        .padding(horizontal = horizontalPadding, vertical = verticalPadding)
+        .clip(shape = RoundedCornerShape(size = 20.dp))
 }
