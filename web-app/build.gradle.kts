@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.multiplatform)
@@ -8,6 +10,7 @@ group = libs.versions.webApp.group.get()
 version = libs.versions.webApp.version.get()
 
 kotlin {
+    @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
         outputModuleName.set("composeApp")
         browser {
@@ -16,10 +19,6 @@ kotlin {
             }
         }
         binaries.executable()
-    }
-
-    sourceSets {
-        wasmJs {  }
     }
 }
 
