@@ -8,8 +8,7 @@ import legalbot.compose.app.composeApp.di.initKoin
 
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
-    val webApp = document.getElementById("web-app")!!
-    ComposeViewport(viewportContainer = webApp) {
+    ComposeViewport(viewportContainer = document.body!!) {
         initKoin()
         WebApp()
     }
