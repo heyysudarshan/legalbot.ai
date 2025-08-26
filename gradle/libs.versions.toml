@@ -86,6 +86,7 @@ compose-multiplatform = ["compose-multiplatform-preview", "compose-multiplatform
 ]
 koin-multiplatform = ["koin-core", "koin-compose", "koin-compose-viewmodel"]
 koin-android = ["koin-core", "koin-android"]
+compose-lifecycle = ["compose-viewmodel", "lifecycle-runtime-compose"]
 
 [plugins]
 kotlin-compiler = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
