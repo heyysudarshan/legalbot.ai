@@ -7,7 +7,7 @@ import legalbot.user.onboarding.repository.language.LanguageRepository
 internal class LanguageUseCase(
     private val repository: LanguageRepository
 ) {
-    suspend fun getLanguages(): StateFlow<List<Language>> {
+    fun getLanguages(): StateFlow<List<Language>> {
         return repository.getLanguages()
     }
 
