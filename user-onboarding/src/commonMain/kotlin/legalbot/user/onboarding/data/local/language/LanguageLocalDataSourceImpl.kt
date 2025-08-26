@@ -3,7 +3,7 @@ package legalbot.user.onboarding.data.local.language
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
-import legalbot.user.onboarding.domain.model.Language
+import legalbot.user.onboarding.domain.model.language.Language
 
 internal class LanguageLocalDataSourceImpl : LanguageLocalDataSource {
     private val languageList = MutableStateFlow(

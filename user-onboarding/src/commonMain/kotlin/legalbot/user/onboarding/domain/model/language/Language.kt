@@ -1,4 +1,4 @@
-package legalbot.user.onboarding.domain.model
+package legalbot.user.onboarding.domain.model.language
 
 internal data class Language(
     val name: String,

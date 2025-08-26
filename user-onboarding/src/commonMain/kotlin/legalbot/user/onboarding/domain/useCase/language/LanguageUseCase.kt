@@ -1,8 +1,8 @@
-package legalbot.user.onboarding.domain.useCase
+package legalbot.user.onboarding.domain.useCase.language
 
 import kotlinx.coroutines.flow.StateFlow
-import legalbot.user.onboarding.domain.model.Language
-import legalbot.user.onboarding.domain.repository.LanguageRepository
+import legalbot.user.onboarding.domain.model.language.Language
+import legalbot.user.onboarding.repository.language.LanguageRepository
 
 internal class LanguageUseCase(
     private val repository: LanguageRepository

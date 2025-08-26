@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import legalbot.user.onboarding.domain.model.Language
-import legalbot.user.onboarding.domain.useCase.LanguageUseCase
+import legalbot.user.onboarding.domain.model.language.Language
+import legalbot.user.onboarding.domain.useCase.language.LanguageUseCase
 
 internal class LanguagePageViewModel(private val languageUseCase: LanguageUseCase) : ViewModel() {
     var uiState = MutableStateFlow(LanguagePageUiState())

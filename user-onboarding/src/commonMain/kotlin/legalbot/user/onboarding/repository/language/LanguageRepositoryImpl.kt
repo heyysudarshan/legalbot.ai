@@ -2,7 +2,7 @@ package legalbot.user.onboarding.repository.language
 
 import kotlinx.coroutines.flow.StateFlow
 import legalbot.user.onboarding.data.local.language.LanguageLocalDataSource
-import legalbot.user.onboarding.domain.model.Language
+import legalbot.user.onboarding.domain.model.language.Language
 
 internal class LanguageRepositoryImpl(
     private val localDataSource: LanguageLocalDataSource
