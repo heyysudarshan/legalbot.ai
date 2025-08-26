@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="language_page_heading">आपली आवडती अ‍ॅप भाषा निवडा</string>
+    <string name="language_page_message">प्रिय वापरकर्ता, कृपया हे अ‍ॅप वापरण्यासाठी आपली आवडती भाषा निवडा. आपण नंतर केव्हाही सेटिंग्जमधून ती बदलू शकता.</string>
+    <string name="next_button_label">पुढे</string>
+    <string name="theme_page_heading">आपला अ‍ॅप थीम निवडा</string>
+    <string name="theme_page_message">अ‍ॅपचे स्वरूप वैयक्तिक करण्यासाठी आपली आवडती थीम निवडा. आपण केव्हाही सेटिंग्जमधून लाइट, डार्क किंवा सिस्टम डीफॉल्ट थीममध्ये बदल करू शकता.</string>
+    <string name="continue_button_label">सुरू ठेवा</string>
+</resources>
