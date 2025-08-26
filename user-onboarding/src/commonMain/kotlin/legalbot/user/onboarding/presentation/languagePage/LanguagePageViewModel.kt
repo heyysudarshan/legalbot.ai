@@ -9,7 +9,7 @@ import legalbot.user.onboarding.domain.model.language.Language
 import legalbot.user.onboarding.domain.useCase.language.LanguageUseCase
 
 internal class LanguagePageViewModel(private val languageUseCase: LanguageUseCase) : ViewModel() {
-    var uiState = MutableStateFlow(LanguagePageUiState())
+    var uiState = MutableStateFlow(value = LanguagePageUiState())
         private set
 
     init {
