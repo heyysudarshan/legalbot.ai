@@ -23,7 +23,7 @@ internal fun Modifier.bottomButtonAndContainerModifier(): Modifier {
         .padding(all = 20.dp)
 }
 
-private fun Modifier.desktopLayoutModifier(
+internal fun Modifier.desktopLayoutModifier(
     backgroundColor: Color,
     horizontalPadding: Dp,
     verticalPadding: Dp
@@ -32,4 +32,11 @@ private fun Modifier.desktopLayoutModifier(
         .fillMaxSize()
         .padding(horizontal = horizontalPadding, vertical = verticalPadding)
         .clip(shape = RoundedCornerShape(size = 20.dp))
+}
+
+internal fun Modifier.commonLayoutModifier(backgroundColor: Color): Modifier {
+    return this
+        .background(color = backgroundColor)
+        .padding(all = 20.dp)
+        .fillMaxSize()
 }
