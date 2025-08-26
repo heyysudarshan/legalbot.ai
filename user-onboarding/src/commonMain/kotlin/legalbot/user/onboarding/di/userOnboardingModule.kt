@@ -4,9 +4,9 @@ import legalbot.user.onboarding.data.local.language.LanguageLocalDataSource
 import legalbot.user.onboarding.data.local.language.LanguageLocalDataSourceImpl
 import legalbot.user.onboarding.data.local.theme.ThemeLocalDataSource
 import legalbot.user.onboarding.data.local.theme.ThemeLocalDataSourceImpl
-import legalbot.user.onboarding.data.repository.LanguageRepositoryImpl
+import legalbot.user.onboarding.repository.language.LanguageRepositoryImpl
 import legalbot.user.onboarding.repository.theme.ThemeRepositoryImpl
-import legalbot.user.onboarding.domain.repository.LanguageRepository
+import legalbot.user.onboarding.repository.language.LanguageRepository
 import legalbot.user.onboarding.repository.theme.ThemeRepository
 import legalbot.user.onboarding.domain.useCase.LanguageUseCase
 import legalbot.user.onboarding.domain.useCase.ThemeUseCase

@@ -1,4 +1,4 @@
-package legalbot.user.onboarding.domain.repository
+package legalbot.user.onboarding.repository.language
 
 import kotlinx.coroutines.flow.StateFlow
 import legalbot.user.onboarding.domain.model.Language
