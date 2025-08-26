@@ -1,9 +1,9 @@
-package legalbot.user.onboarding.domain.repository
+package legalbot.user.onboarding.repository.theme
 
 import kotlinx.coroutines.flow.StateFlow
 import legalbot.user.onboarding.domain.model.Theme
 
 internal interface ThemeRepository {
-    suspend fun getThemes() : StateFlow<List<Theme>>
+    suspend fun getThemes(): StateFlow<List<Theme>>
     fun updateSelectedTheme(theme: Theme)
 }
