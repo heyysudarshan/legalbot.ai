@@ -1,4 +1,4 @@
-package compose.app.shared.presentation.routes
+package compose.app.shared.presentation.navigation
 
 import kotlinx.serialization.Serializable
 
