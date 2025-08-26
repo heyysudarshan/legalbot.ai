@@ -80,7 +80,7 @@ compose-multiplatform = ["compose-multiplatform-preview", "compose-multiplatform
     "compose-multiplatform-navigation", "compose-multiplatform-foundation",
     "compose-multiplatform-ui", "compose-multiplatform-material3"
 ]
-koin-multiplatform = ["koin-core", "koin-compose"]
+koin-multiplatform = ["koin-core", "koin-compose", "koin-compose-viewmodel"]
 koin-android = ["koin-core", "koin-android"]
 
 [plugins]
