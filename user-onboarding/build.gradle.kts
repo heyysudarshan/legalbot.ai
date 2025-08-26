@@ -48,5 +48,6 @@ android {
         minSdk = libs.versions.userOnboarding.androidLibrary.minSdk.get().toInt()
     }
 }
+
 // Custom build directory
 layout.buildDirectory.set(file(path = "$rootDir/.build/UserOnboarding"))
