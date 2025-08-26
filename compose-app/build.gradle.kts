@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -18,6 +19,9 @@ kotlin {
             jvmTarget = JvmTarget.JVM_21
         }
     }
+
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs()
 
     listOf(
         iosX64(),
