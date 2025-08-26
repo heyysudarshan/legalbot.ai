@@ -9,7 +9,7 @@ import legalbot.user.onboarding.domain.model.theme.Theme
 import legalbot.user.onboarding.domain.useCase.theme.ThemeUseCase
 
 internal class ThemePageViewModel(private val themeUseCase: ThemeUseCase) : ViewModel() {
-    val uiState = MutableStateFlow(ThemePageUiState())
+    val uiState = MutableStateFlow(value = ThemePageUiState())
 
     init {
         viewModelScope.launch {
