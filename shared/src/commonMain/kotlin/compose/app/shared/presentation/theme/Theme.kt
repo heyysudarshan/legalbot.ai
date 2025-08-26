@@ -11,10 +11,10 @@ private val darkColorScheme = darkColorScheme()
 
 @Composable
 fun ComposeAppTheme(
-    isDarkTheme: Boolean = false,
+    isDarkMode: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = if (isDarkTheme) darkColorScheme else lightColorScheme
+    val colorScheme = if (isDarkMode) darkColorScheme else lightColorScheme
     val typography = getTypography()
 
     MaterialTheme(
