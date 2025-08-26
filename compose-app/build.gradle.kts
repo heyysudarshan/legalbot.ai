@@ -5,7 +5,6 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.compose.multiplatform)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 group = libs.versions.composeApp.group.get()
@@ -33,11 +32,8 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.koin.core)
-            implementation(libs.kotlin.serialization.json)
-            implementation(libs.compose.multiplatform.material3)
-            implementation(libs.compose.multiplatform.ui)
-            implementation(libs.compose.multiplatform.navigation)
+            implementation(libs.bundles.koin.multiplatform)
+            implementation(libs.bundles.compose.multiplatform)
             implementation(projects.shared)
             implementation(projects.userOnboarding)
         }
