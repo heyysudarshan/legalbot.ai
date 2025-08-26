@@ -20,6 +20,13 @@ kotlin {
         }
         binaries.executable()
     }
+
+    sourceSets {
+        wasmJsMain.dependencies {
+            implementation(libs.compose.multiplatform.ui)
+            implementation(projects.composeApp)
+        }
+    }
 }
 
 // Custom build directory
