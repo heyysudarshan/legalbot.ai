@@ -26,7 +26,6 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.koin.compose.viewmodel)
             implementation(libs.bundles.koin.multiplatform)
             implementation(libs.kotlin.serialization.json)
             implementation(libs.lifecycle.runtime.compose)
