@@ -21,7 +21,9 @@ kotlin {
     }
 
     @OptIn(ExperimentalWasmDsl::class)
-    wasmJs()
+    wasmJs {
+        browser()
+    }
 
     listOf(
         iosX64(),
