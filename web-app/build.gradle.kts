@@ -8,7 +8,19 @@ group = libs.versions.webApp.group.get()
 version = libs.versions.webApp.version.get()
 
 kotlin {
-    wasmJs()
+    wasmJs {
+        outputModuleName.set("composeApp")
+        browser {
+            commonWebpackConfig {
+                outputFileName = "composeApp.js"
+            }
+        }
+        binaries.executable()
+    }
+
+    sourceSets {
+        wasmJs {  }
+    }
 }
 
 // Custom build directory
