@@ -45,18 +45,17 @@ internal fun LanguagePage(
     val windowHeight = windowSizeClass.windowHeightSizeClass
 
     // Check if the display layout is in mobile landscape mode
-    val isMobileLandscapeMode = windowWidth in listOf(
-        WindowWidthSizeClass.COMPACT,
-        WindowWidthSizeClass.MEDIUM,
-        WindowWidthSizeClass.EXPANDED
-    ) && windowHeight in listOf(WindowHeightSizeClass.COMPACT, WindowHeightSizeClass.MEDIUM)
+    val isMobileLandscapeMode = windowWidth == WindowWidthSizeClass.EXPANDED
+            && windowHeight in listOf(WindowHeightSizeClass.COMPACT, WindowHeightSizeClass.MEDIUM)
 
     if (isMobileLandscapeMode) {
         Row(modifier = modifier) {
             val modifier1 = Modifier
                 .fillMaxHeight()
                 .weight(0.8f)
-            val modifier2 = Modifier.weight(1.2f)
+            val modifier2 = Modifier
+                .fillMaxHeight()
+                .weight(1.2f)
 
             LandingPageLayout(
                 isMobileLandscapeMode = true,
@@ -95,7 +94,6 @@ private fun LandingPageLayout(
         } else {
             Modifier.headingAndMessageModifier()
         }
-
         HeadingAndMessage(
             heading = Res.string.language_page_heading,
             message = Res.string.language_page_message,
@@ -103,10 +101,15 @@ private fun LandingPageLayout(
         )
     }
     Box(modifier = modifier2) {
-        LanguageList(
-            languagePageViewModel = languagePageViewModel,
-            modifier = Modifier.fillMaxSize()
-        )
+        val languageListModifier = if (isMobileLandscapeMode) {
+            Modifier
+                .fillMaxWidth()
+                .align(alignment = Alignment.Center)
+        } else {
+            Modifier
+                .fillMaxSize()
+        }
+        LanguageList(languagePageViewModel = languagePageViewModel, modifier = languageListModifier)
         BottomButtonAndContainer(
             label = Res.string.next_button_label,
             modifier = Modifier
