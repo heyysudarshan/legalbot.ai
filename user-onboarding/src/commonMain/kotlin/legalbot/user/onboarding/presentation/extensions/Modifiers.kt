@@ -11,10 +11,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-internal fun Modifier.headingAndMessageModifier(): Modifier {
+internal fun Modifier.headingAndMessageModifier(isMobileLandscapeMode: Boolean = false): Modifier {
+    val topPadding = if (isMobileLandscapeMode) 20.dp else 60.dp
     return this
         .fillMaxWidth()
-        .padding(start = 20.dp, end = 20.dp, top = 60.dp, bottom = 20.dp)
+        .padding(start = 20.dp, end = 20.dp, top = topPadding, bottom = 20.dp)
 }
 
 internal fun Modifier.bottomButtonAndContainerModifier(): Modifier {
