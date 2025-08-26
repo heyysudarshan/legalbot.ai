@@ -1,7 +1,7 @@
 package legalbot.user.onboarding.data.local.theme
 
 import kotlinx.coroutines.flow.StateFlow
-import legalbot.user.onboarding.domain.model.Theme
+import legalbot.user.onboarding.domain.model.theme.Theme
 
 internal interface ThemeLocalDataSource {
     suspend fun getThemes(): StateFlow<List<Theme>>

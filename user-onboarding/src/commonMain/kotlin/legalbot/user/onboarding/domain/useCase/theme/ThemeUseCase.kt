@@ -1,8 +1,8 @@
-package legalbot.user.onboarding.domain.useCase
+package legalbot.user.onboarding.domain.useCase.theme
 
 import kotlinx.coroutines.flow.StateFlow
-import legalbot.user.onboarding.domain.model.Theme
-import legalbot.user.onboarding.domain.repository.ThemeRepository
+import legalbot.user.onboarding.domain.model.theme.Theme
+import legalbot.user.onboarding.repository.theme.ThemeRepository
 
 internal class ThemeUseCase(
     private val repository: ThemeRepository

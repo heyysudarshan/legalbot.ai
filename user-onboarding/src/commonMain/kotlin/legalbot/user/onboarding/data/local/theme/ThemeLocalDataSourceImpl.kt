@@ -3,8 +3,8 @@ package legalbot.user.onboarding.data.local.theme
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
-import legalbot.user.onboarding.domain.model.Theme
-import legalbot.user.onboarding.domain.model.ThemeType
+import legalbot.user.onboarding.domain.model.theme.Theme
+import legalbot.user.onboarding.domain.model.theme.ThemeType
 
 internal class ThemeLocalDataSourceImpl : ThemeLocalDataSource {
     private val themeList = MutableStateFlow(

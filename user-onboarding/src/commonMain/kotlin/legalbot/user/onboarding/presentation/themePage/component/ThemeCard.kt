@@ -18,8 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import compose.app.shared.presentation.theme.ComposeAppTheme
-import legalbot.user.onboarding.domain.model.Theme
-import legalbot.user.onboarding.domain.model.ThemeType
+import legalbot.user.onboarding.domain.model.theme.Theme
+import legalbot.user.onboarding.domain.model.theme.ThemeType
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

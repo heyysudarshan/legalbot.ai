@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import legalbot.user.onboarding.domain.model.Theme
-import legalbot.user.onboarding.domain.useCase.ThemeUseCase
+import legalbot.user.onboarding.domain.model.theme.Theme
+import legalbot.user.onboarding.domain.useCase.theme.ThemeUseCase
 
 internal class ThemePageViewModel(private val themeUseCase: ThemeUseCase) : ViewModel() {
     val uiState = MutableStateFlow(ThemePageUiState())

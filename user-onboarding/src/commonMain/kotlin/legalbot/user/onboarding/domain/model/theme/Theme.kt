@@ -1,4 +1,4 @@
-package legalbot.user.onboarding.domain.model
+package legalbot.user.onboarding.domain.model.theme
 
 internal data class Theme(
     val name: String,
