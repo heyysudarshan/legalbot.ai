@@ -34,8 +34,7 @@ kotlin {
         commonMain.dependencies {
             implementation(libs.bundles.koin.multiplatform)
             implementation(libs.kotlin.serialization.json)
-            implementation(libs.lifecycle.runtime.compose)
-            implementation(libs.compose.viewmodel)
+            implementation(libs.bundles.compose.lifecycle)
             implementation(libs.bundles.compose.multiplatform)
         }
     }
