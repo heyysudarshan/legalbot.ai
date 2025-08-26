@@ -46,6 +46,10 @@ kotlin {
     }
 }
 
+compose.resources {
+    generateResClass = never
+}
+
 android {
     namespace = libs.versions.composeApp.androidLibrary.namespace.get()
     compileSdk = libs.versions.composeApp.androidLibrary.compileSdk.get().toInt()
