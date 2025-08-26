@@ -36,6 +36,7 @@ dependencyResolutionManagement {
 
 include(":android-app")
 include(":desktop-app")
+include(":web-app")
 include(":compose-app")
 include(":shared")
 include(":user-onboarding")
