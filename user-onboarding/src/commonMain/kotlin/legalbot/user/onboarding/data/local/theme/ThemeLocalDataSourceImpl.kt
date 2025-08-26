@@ -1,10 +1,10 @@
 package legalbot.user.onboarding.data.local.theme
 
+import compose.app.shared.domain.model.ThemeType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import legalbot.user.onboarding.domain.model.theme.Theme
-import legalbot.user.onboarding.domain.model.theme.ThemeType
 
 internal class ThemeLocalDataSourceImpl : ThemeLocalDataSource {
     private val themeList = MutableStateFlow(
@@ -30,7 +30,7 @@ internal class ThemeLocalDataSourceImpl : ThemeLocalDataSource {
         )
     )
 
-    override suspend fun getThemes(): StateFlow<List<Theme>> {
+    override fun getThemes(): StateFlow<List<Theme>> {
         return themeList
     }
 
