@@ -5,7 +5,6 @@ import androidx.compose.runtime.ProvidedValue
 
 @Suppress("EXPECT_ACTUAL_CLASSIFIERS_ARE_IN_BETA_WARNING")
 expect object LocaleManager {
-    val current: String @Composable get
     @Composable
     infix fun provides(value: String?): ProvidedValue<*>
 }
