@@ -97,7 +97,7 @@ private fun LandingPageLayout(
         HeadingAndMessage(
             heading = Res.string.language_page_heading,
             message = Res.string.language_page_message,
-            modifier = backgroundModifier.align(alignment = Alignment.Center)
+            modifier = backgroundModifier
         )
     }
     Box(modifier = modifier2) {
