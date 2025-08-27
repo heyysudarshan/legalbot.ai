@@ -29,7 +29,8 @@ internal fun Modifier.desktopLayoutModifier(
     horizontalPadding: Dp,
     verticalPadding: Dp
 ): Modifier {
-    return background(color = backgroundColor)
+    return this
+        .background(color = backgroundColor)
         .fillMaxSize()
         .padding(horizontal = horizontalPadding, vertical = verticalPadding)
         .clip(shape = RoundedCornerShape(size = 20.dp))
