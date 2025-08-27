@@ -84,7 +84,7 @@ private fun LandingPageLayout(
     languagePageViewModel: LanguagePageViewModel,
     userOnBoardingNavHostController: NavHostController,
     modifier: Modifier = Modifier,
-    modifier2: Modifier = Modifier,
+    modifier2: Modifier = Modifier
 ) {
     Box(modifier = modifier) {
         val backgroundModifier = if (isMobileLandscapeMode) {
