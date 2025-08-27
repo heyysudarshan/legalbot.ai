@@ -25,7 +25,7 @@ internal class LanguageLocalDataSourceImpl : LanguageLocalDataSource {
                 message = "इस ऐप का उपयोग हिंदी में करें।",
                 locale = "hi",
                 isSelected = false
-            ),
+            )
         )
     )
 
