@@ -34,7 +34,7 @@ internal fun LanguageCard(
     val commonModifier = Modifier.fillMaxWidth()
     val backgroundModifier = modifier
         .padding(horizontal = 20.dp)
-        .background(color = MaterialTheme.colorScheme.surface)
+        .background(color = MaterialTheme.colorScheme.background)
         .clip(shape = RoundedCornerShape(size = 12.dp))
         .clickable(onClick = onClick)
         .padding(vertical = 12.dp)
