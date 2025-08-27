@@ -1,4 +1,4 @@
-package legalbot.compose.app.composeApp.di
+package legalbot.compose.app.di
 
 import compose.app.shared.di.sharedModule
 import legalbot.user.onboarding.di.userOnboardingModule
