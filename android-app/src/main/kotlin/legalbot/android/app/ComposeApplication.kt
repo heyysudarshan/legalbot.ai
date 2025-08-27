@@ -1,7 +1,7 @@
 package legalbot.android.app
 
 import android.app.Application
-import legalbot.compose.app.composeApp.di.initKoin
+import legalbot.compose.app.di.initKoin
 import org.koin.android.ext.koin.androidContext
 
 class ComposeApplication : Application() {
