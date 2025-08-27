@@ -1,4 +1,4 @@
-package legalbot.compose.app.composeApp
+package legalbot.compose.app.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
