@@ -2,6 +2,7 @@ package legalbot.user.onboarding.presentation.languagePage
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import compose.app.shared.presentation.composeApp.customAppLocale
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -24,5 +25,6 @@ internal class LanguagePageViewModel(private val languageUseCase: LanguageUseCas
 
     fun updateSelectedLanguage(language: Language) {
         languageUseCase.updateSelectedLanguage(language = language)
+        customAppLocale = language.locale
     }
 }
