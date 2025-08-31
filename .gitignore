@@ -14,3 +14,6 @@ web-app/build
 
 # Local & application properties
 local.properties
+
+# Xcode project specific files & folders
+iosApp/iosApp.xcodeproj/xuserdata
