@@ -60,6 +60,3 @@ android {
         minSdk = libs.versions.composeApp.androidLibrary.minSdk.get().toInt()
     }
 }
-
-// Custom build directory
-layout.buildDirectory.set(file(path = "$rootDir/.build/ComposeApp"))
