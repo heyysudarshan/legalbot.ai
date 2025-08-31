@@ -5,9 +5,18 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-private val lightColorScheme = lightColorScheme()
+private val lightColorScheme = lightColorScheme(
+    background = backgroundColorLight,
+    primary = primaryColorCommon,
+    onSurface = primaryFontColorLight,
+    onSurfaceVariant = secondaryFontColorLight,
+)
 
-private val darkColorScheme = darkColorScheme()
+private val darkColorScheme = darkColorScheme(
+    background = backgroundColorDark,
+    onSurface = primaryFontColorDark,
+    onSurfaceVariant = secondaryFontColorDark,
+)
 
 @Composable
 fun ComposeAppTheme(
