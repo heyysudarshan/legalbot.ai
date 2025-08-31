@@ -109,12 +109,13 @@ private fun LandingPageLayout(
             Modifier
                 .fillMaxSize()
         }
+        val bottomButtonAndContainerModifier = Modifier.bottomButtonAndContainerModifier()
+            .align(alignment = Alignment.BottomEnd)
+
         LanguageList(languagePageViewModel = languagePageViewModel, modifier = languageListModifier)
         BottomButtonAndContainer(
             label = Res.string.next_button_label,
-            modifier = Modifier
-                .bottomButtonAndContainerModifier()
-                .align(alignment = Alignment.BottomEnd),
+            modifier = bottomButtonAndContainerModifier,
             onClick = {
                 userOnBoardingNavHostController.navigate(UserOnboardingRoutes.ThemPage)
             }
