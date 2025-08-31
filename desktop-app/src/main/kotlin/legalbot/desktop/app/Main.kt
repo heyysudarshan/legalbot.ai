@@ -3,7 +3,7 @@ package legalbot.desktop.app
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import legalbot.compose.app.DesktopApp
-import legalbot.compose.app.composeApp.di.initKoin
+import legalbot.compose.app.di.initKoin
 
 fun main() {
     initKoin()
