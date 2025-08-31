@@ -8,7 +8,7 @@ class ComposeApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         initKoin {
-            androidContext(this@ComposeApplication)
+            androidContext(androidContext = this@ComposeApplication)
         }
     }
 }
