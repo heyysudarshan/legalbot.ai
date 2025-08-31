@@ -32,7 +32,7 @@ kotlin {
 
     sourceSets {
         wasmJsMain.dependencies {
-            implementation(libs.compose.multiplatform.ui)
+            implementation(libs.bundles.compose.multiplatform)
             implementation(projects.composeApp)
         }
     }
