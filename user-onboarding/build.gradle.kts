@@ -36,6 +36,7 @@ kotlin {
             implementation(libs.bundles.koin.multiplatform)
             implementation(libs.kotlin.serialization.json)
             implementation(libs.bundles.compose.lifecycle)
+            implementation(libs.material3.adaptive)
             implementation(libs.bundles.compose.multiplatform)
             implementation(projects.shared)
         }
