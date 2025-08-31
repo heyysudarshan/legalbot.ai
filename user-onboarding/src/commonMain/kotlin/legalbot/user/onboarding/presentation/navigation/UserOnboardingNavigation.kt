@@ -58,7 +58,6 @@ fun UserOnboardingNavigation(onNavHostReady: (NavHostController) -> Unit = {}) {
 
         // Tablet breakpoint
         windowWidth == WindowWidthSizeClass.COMPACT && (windowHeight in listOf(
-            WindowHeightSizeClass.EXPANDED,
             WindowHeightSizeClass.COMPACT
         )) -> {
             BoxWithConstraints(modifier = Modifier.fillMaxSize()) {
