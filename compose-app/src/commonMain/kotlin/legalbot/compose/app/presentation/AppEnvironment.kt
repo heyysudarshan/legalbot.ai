@@ -8,9 +8,7 @@ import compose.app.shared.util.LocaleManager
 
 @Composable
 fun AppEnvironment(content: @Composable () -> Unit) {
-    CompositionLocalProvider(
-        LocaleManager provides customAppLocale
-    ) {
+    CompositionLocalProvider(LocaleManager provides customAppLocale) {
         key(customAppLocale) {
             content()
         }
