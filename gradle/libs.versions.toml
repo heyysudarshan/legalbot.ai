@@ -4,6 +4,7 @@ kotlin = "2.2.10"
 androidGradlePlugin = "8.12.2"
 activityCompose = "1.10.1"
 composeMultiplatform = "1.9.0-rc01"
+material3 = "1.9.0-beta04"
 materialAdaptive = "1.1.2"
 hotReload = "1.0.0-beta05"
 julie = "1.0.0-alpha"
@@ -70,7 +71,7 @@ compose-multiplatform-resources = { module = "org.jetbrains.compose.components:c
 compose-multiplatform-navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigation" }
 compose-multiplatform-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "composeMultiplatform" }
 compose-multiplatform-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
-compose-multiplatform-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "composeMultiplatform" }
+compose-multiplatform-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3" }
 compose-multiplatform-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "composeMultiplatform" }
 material3-adaptive = { module = "org.jetbrains.compose.material3.adaptive:adaptive", version.ref = "materialAdaptive"}
 compose-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "viewmodel" }
