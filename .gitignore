@@ -10,6 +10,7 @@
 # Build output folder
 .build
 shared/build
+web-app/build
 
 # Local & application properties
 local.properties
